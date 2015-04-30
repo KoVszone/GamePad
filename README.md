@@ -1,4 +1,4 @@
-# GamePadSDK
+﻿# GamePadSDK
 
 ####版本  
 
@@ -8,7 +8,7 @@ v1.1
 1. 增加 针对未适配的手柄 提供映射界面.
 2. 增加 当前支持的手柄列表展示界面
 3. 增加 当前已经插入到设备上的列表界面
-4. 上述界面UI资源均以Android Libarry 的形式提供,与libgamepad.jar独立,故可单独使用.
+4. 上述界面UI资源均以Android Libarry+jar的形式提供,与libgamepad.jar独立,故可单独使用.
 5. 提升兼容性(android4.0-5.1)
 
 #### 功能
