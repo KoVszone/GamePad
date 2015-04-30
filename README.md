@@ -7,11 +7,11 @@
 -----
 ####Change Log  
 v1.1
-1.  增加 针对未适配的手柄 提供映射界面.
+1. 增加 针对未适配的手柄 提供映射界面.
 2. 增加 当前支持的手柄列表展示界面
 3. 增加 当前已经插入到设备上的列表界面
 4. 上述界面UI资源均以Android Libarry+jar的形式提供,与libgamepad.jar独立,故可单独使用.
-5.  提升兼容性(android4.0-5.1)
+5. 提升兼容性(android4.0-5.1)
 
 --------
 
@@ -21,6 +21,7 @@ GamePad SDK提供在android和yunOS操作系统上对游戏手柄的适配，功
 1：对于APP应用情景 使用手柄的A，B键模拟确认,返回的操作,控制应用的操作.
 2：对于游戏情景 提供**上下左右方向键,左摇杆,A，B，X，Y，start， slect， L1， L2**等八键的适配
 3：兼容市面上诸多手柄,并对新上市手柄提供在线的,持续的,及时的兼容性更新.
+
 ![Alt text](./gamepad.png)
 
 -----
@@ -224,15 +225,8 @@ OnPlayerListener mOnPlayerListener = new OnPlayerListener(){
     }
     
 ```
-###虚拟手柄下载地址
-![Alt text](./1426502039529.png)
 
 
-
-----
-
-
------
 ### 关于混淆
 在proguard配置文件中添加如下
 >-libraryjars libgamepad.jar
@@ -248,16 +242,22 @@ yun OS 外设SDK2.7及以上
 
 ###适配标准说明
 提供了游戏中常用按键的适配,如下图中红色标注的按钮等非常见按键不在适配范围
-![Alt text](./手柄SDK提示_2.png)
+
+![Alt text](./out_gamepad.png)
 
 ###兼容范围之外的手柄如何适配
 提供了DemoGamePadRes的android library和libgamepadwithui.jar.
 集成UI库后APP就有了通过APP用户手动映射的能力.
 适配界面截图如下:
+
+
 ![Alt text](./mapping.png)
+
 ![Alt text](./mapping1.png)
 
+###虚拟手柄下载地址
 
+![Alt text](./1426502039529.png)
 
 ###常见问题QA
 1. Q1:异常 java.lang.VerifyError. **cn.vszone.gamepad
