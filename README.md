@@ -6,23 +6,51 @@
 
 -----
 ####Change Log  
-v1.1
+VSzone1.1
+
+
 1. 增加 针对未适配的手柄 提供映射界面.
+
 2. 增加 当前支持的手柄列表展示界面
+
 3. 增加 当前已经插入到设备上的列表界面
+
 4. 上述界面UI资源均以Android Libarry+jar的形式提供,与libgamepad.jar独立,故可单独使用.
+
 5. 提升兼容性(android4.0-5.1)
 
 --------
 
 #### 功能
 针对目前手柄没有统一标准,导致各个手柄在使用的过程中出现各种问题，游戏开发者在对手柄的兼容性适配将会成为一个头大的问题，在这种状况下，手柄SDK出现了。
+
 GamePad SDK提供在android和yunOS操作系统上对游戏手柄的适配，功能如下
+
 1：对于APP应用情景 使用手柄的A，B键模拟确认,返回的操作,控制应用的操作.
+
 2：对于游戏情景 提供**上下左右方向键,左摇杆,A，B，X，Y，start， slect， L1， L2**等八键的适配
+
 3：兼容市面上诸多手柄,并对新上市手柄提供在线的,持续的,及时的兼容性更新.
 
+###标准按键
+如下所示,在SDK的作用下 开发者只需关心业务及与如下标准按键交互逻辑即可.
 ![Alt text](./gamepad.png)
+---
+
+###适配标准说明
+提供了游戏中常用按键的适配,如下图中红色标注的按钮等非常见按键不在适配范围
+
+![Alt text](./out_gamepad.png)
+
+###兼容范围之外的手柄如何适配
+提供了DemoGamePadRes的android library和libgamepadwithui.jar.
+集成UI库后APP就有了通过APP用户手动映射的能力.
+适配界面截图如下:
+
+
+![Alt text](./mapping.png)
+
+![Alt text](./mapping1.png)
 
 -----
 ### 示例DEMO
@@ -198,7 +226,7 @@ OnPlayerListener mOnPlayerListener = new OnPlayerListener(){
         GamePadManager.getInstance(this).destory();
     }
 6:**虚拟手柄支持**,支持"KO电视游戏助手"虚拟手柄支持.仅局域网同子网段(**可选,不支持5.0及以上**)
->在AndroidManifest.xml中注册虚拟手柄服务
+在AndroidManifest.xml中注册虚拟手柄服务
 ```xml
         <service
             android:name="cn.vszone.gamepad.virtual.VirtualGamdPadService"
@@ -210,13 +238,13 @@ OnPlayerListener mOnPlayerListener = new OnPlayerListener(){
             </intent-filter>
         </service>
 ```
->配置虚拟手柄拓展支持.(初始化SDK时 配置开启虚拟手柄支持)
+配置虚拟手柄拓展支持.(初始化SDK时 配置开启虚拟手柄支持)
 ```java
         ConfigBuilder configBuilder = new ConfigBuilder();
         configBuilder.configVirtualGamePadExtand();
         GamePadManager.getInstance(this).conifg(configBuilder);
 ```
->窗口切换 仅仅让当前的窗口支持虚拟手柄
+窗口切换 仅仅让当前的窗口支持虚拟手柄
 ```java
     @Override
     protected void onResume() {
@@ -227,9 +255,10 @@ OnPlayerListener mOnPlayerListener = new OnPlayerListener(){
 ```
 
 
+
 ### 关于混淆
 在proguard配置文件中添加如下
->-libraryjars libgamepad.jar
+-libraryjars libgamepad.jar
 
 
 
@@ -240,20 +269,6 @@ JAVA开发文档见 /doc
 android 4.0-5.1
 yun OS 外设SDK2.7及以上 
 
-###适配标准说明
-提供了游戏中常用按键的适配,如下图中红色标注的按钮等非常见按键不在适配范围
-
-![Alt text](./out_gamepad.png)
-
-###兼容范围之外的手柄如何适配
-提供了DemoGamePadRes的android library和libgamepadwithui.jar.
-集成UI库后APP就有了通过APP用户手动映射的能力.
-适配界面截图如下:
-
-
-![Alt text](./mapping.png)
-
-![Alt text](./mapping1.png)
 
 ###虚拟手柄下载地址
 
