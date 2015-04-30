@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+        <TextView android:textAppearance="?android:textAppearanceLarge" android:textSize="32.0sp" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="8.0dip" android:text="检测到有设备接入" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:textSize="24.0sp" android:layout_gravity="center" android:id="@id/textView2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="8.0dip" android:text="请按设备的「任意键」激活" />
+        <ImageView android:layout_gravity="center" android:id="@id/ko_iv_tip_in_sc_center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="8.0dip" android:src="@drawable/pic_guide_gamepad_1" android:layout_centerInParent="true" android:contentDescription="@string/ko_app_name" />
+    </LinearLayout>
+</RelativeLayout>

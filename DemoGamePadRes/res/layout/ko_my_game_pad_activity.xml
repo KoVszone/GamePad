@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/font_size72px" android:textColor="@color/ko_font_white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_vertical_40px" android:text="@string/ko_my_game_pad" android:layout_centerHorizontal="true" style="@style/WhiteTextStyle" />
+    <HorizontalScrollView android:id="@id/my_game_pad_h_scroll_view" android:scrollbars="none" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/my_game_pad_container_margin_top_234px" android:layout_centerHorizontal="true">
+        <LinearLayout android:orientation="horizontal" android:id="@id/my_game_pad_ll_items_container" android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/my_game_pad_item_unactived_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/my_game_pad_item_margin_left_40px">
+                <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/my_game_pad_item_unactived_up_tips" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:layout_gravity="center" android:layout_width="@dimen/my_game_pad_item_top_tips_arrow_size_32px" android:layout_height="@dimen/my_game_pad_item_top_tips_arrow_size_32px" android:src="@drawable/ko_ico_my_handle_arrow_t" android:scaleType="centerInside" android:contentDescription="@string/ko_image_description" />
+                    <TextView android:textColor="@color/ko_font_white_alpha60" android:id="@id/my_game_pad_item_unactived_up_tips_tv_hint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ko_press_up_delete_gamepad_item" style="@style/TipPaditemStyle" />
+                </LinearLayout>
+                <include android:id="@id/my_game_pad_item_unactived" android:tag="0" android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/ko_my_game_pad_list_item_unactived" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/my_game_pad_item_idx0_container" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/my_game_pad_item_idx0_up_tips" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:layout_gravity="center" android:layout_width="@dimen/my_game_pad_item_top_tips_arrow_size_32px" android:layout_height="@dimen/my_game_pad_item_top_tips_arrow_size_32px" android:src="@drawable/ko_ico_my_handle_arrow_t" android:scaleType="centerInside" android:contentDescription="@string/ko_image_description" />
+                    <TextView android:textColor="@color/ko_font_white_alpha60" android:id="@id/my_game_pad_item_idx0_up_tips_tv_hint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ko_press_up_delete_gamepad_item" style="@style/TipPaditemStyle" />
+                </LinearLayout>
+                <include android:id="@id/my_game_pad_item_idx0" android:tag="0" android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/ko_my_game_pad_list_item" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/my_game_pad_item_idx1_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/my_game_pad_item_margin_left_40px">
+                <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/my_game_pad_item_idx1_up_tips" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:layout_gravity="center" android:layout_width="@dimen/my_game_pad_item_top_tips_arrow_size_32px" android:layout_height="@dimen/my_game_pad_item_top_tips_arrow_size_32px" android:src="@drawable/ko_ico_my_handle_arrow_t" android:scaleType="centerInside" android:contentDescription="@string/ko_image_description" />
+                    <TextView android:textColor="@color/ko_font_white_alpha60" android:id="@id/my_game_pad_item_idx1_up_tips_tv_hint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ko_press_up_delete_gamepad_item" style="@style/TipPaditemStyle" />
+                </LinearLayout>
+                <include android:id="@id/my_game_pad_item_idx1" android:tag="1" android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/ko_my_game_pad_list_item_virtual_pad" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/my_game_pad_item_idx2_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/my_game_pad_item_margin_left_40px">
+                <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/my_game_pad_item_idx2_up_tips" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:layout_gravity="center" android:layout_width="@dimen/my_game_pad_item_top_tips_arrow_size_32px" android:layout_height="@dimen/my_game_pad_item_top_tips_arrow_size_32px" android:src="@drawable/ko_ico_my_handle_arrow_t" android:scaleType="centerInside" android:contentDescription="@string/ko_image_description" />
+                    <TextView android:textColor="@color/ko_font_white_alpha60" android:id="@id/my_game_pad_item_idx2_up_tips_tv_hint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ko_press_up_delete_gamepad_item" style="@style/TipPaditemStyle" />
+                </LinearLayout>
+                <include android:id="@id/my_game_pad_item_idx2" android:tag="2" android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/ko_my_game_pad_list_item" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/my_game_pad_item_idx3_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/my_game_pad_item_margin_left_40px">
+                <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/my_game_pad_item_idx3_up_tips" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:layout_gravity="center" android:layout_width="@dimen/my_game_pad_item_top_tips_arrow_size_32px" android:layout_height="@dimen/my_game_pad_item_top_tips_arrow_size_32px" android:src="@drawable/ko_ico_my_handle_arrow_t" android:scaleType="centerInside" android:contentDescription="@string/ko_image_description" />
+                    <TextView android:textColor="@color/ko_font_white_alpha60" android:id="@id/my_game_pad_item_idx3_up_tips_tv_hint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ko_press_up_delete_gamepad_item" style="@style/TipPaditemStyle" />
+                </LinearLayout>
+                <include android:id="@id/my_game_pad_item_idx3" android:tag="3" android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/ko_my_game_pad_list_item" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/my_game_pad_item_idx4_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/my_game_pad_item_margin_left_40px">
+                <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/my_game_pad_item_idx4_up_tips" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:layout_gravity="center" android:layout_width="@dimen/my_game_pad_item_top_tips_arrow_size_32px" android:layout_height="@dimen/my_game_pad_item_top_tips_arrow_size_32px" android:src="@drawable/ko_ico_my_handle_arrow_t" android:scaleType="centerInside" android:contentDescription="@string/ko_image_description" />
+                    <TextView android:textSize="@dimen/font_size32px" android:textColor="@color/ko_font_white_alpha60" android:id="@id/my_game_pad_item_idx4_up_tips_tv_hint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ko_press_up_delete_gamepad_item" />
+                </LinearLayout>
+                <include android:id="@id/my_game_pad_item_idx4" android:tag="4" android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/ko_my_game_pad_list_item" />
+            </LinearLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+    <LinearLayout android:orientation="horizontal" android:id="@id/pad_key_mapping_lyt_footer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/pad_key_mapping_footer_margin_right_80px" android:layout_marginBottom="@dimen/pad_key_mapping_footer_margin_right_80px" android:layout_alignParentRight="true" android:layout_alignParentBottom="true">
+        <TextView android:layout_gravity="center_vertical" android:background="@drawable/ko_mapping_footer_menu" android:layout_width="@dimen/pad_key_mapping_footer_menu_size_42px" android:layout_height="@dimen/pad_key_mapping_footer_menu_size_42px" />
+        <TextView android:textSize="@dimen/font_size36px" android:textColor="@color/ko_white_per50" android:gravity="center" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/pad_key_mapping_footer_text_margin_left_16px" android:text="@string/ko_mygamepad_tips_right_down" style="@style/WhiteTextStyle" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="rectangle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#cc181818" android:radius="@dimen/radius8px" />
+    <stroke android:width="@dimen/battle_hall_label_stroken_width_4px" android:color="#1affffff" />
+    <corners android:radius="@dimen/radius8px" />
+    <padding android:left="@dimen/battle_hall_count_down_timer_number_padding_20px" android:top="@dimen/battle_hall_count_down_timer_number_padding_20px" android:right="@dimen/battle_hall_count_down_timer_number_padding_20px" android:bottom="@dimen/battle_hall_count_down_timer_number_padding_20px" />
+</shape>

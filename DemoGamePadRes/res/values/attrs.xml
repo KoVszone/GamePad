@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="metaButtonBarStyle" format="reference" />
+    <attr name="metaButtonBarButtonStyle" format="reference" />
+    <attr name="autoCenterPointerInSlice" format="boolean" />
+    <attr name="highlightStrength" format="float" />
+    <attr name="labelColor" format="color" />
+    <attr name="labelHeight" format="dimension" />
+    <attr name="labelPosition">
+        <enum name="left" value="0" />
+        <enum name="right" value="1" />
+    </attr>
+    <attr name="labelWidth" format="dimension" />
+    <attr name="labelY" format="dimension" />
+    <attr name="pieRotation" format="integer" />
+    <attr name="pointerRadius" format="dimension" />
+    <attr name="showText" format="boolean" />
+    <attr name="text" format="reference" />
+    <attr name="textSize" format="dimension" />
+    <attr name="textColor" format="reference|color" />
+    <attr name="corner_radius" format="dimension" />
+    <attr name="border_width" format="dimension" />
+    <attr name="border_color" format="color" />
+    <attr name="mutate_background" format="boolean" />
+    <attr name="oval" format="boolean" />
+    <attr name="backgroundColor" format="reference|color" />
+    <attr name="lineSpacingExtra" format="dimension" />
+    <attr name="number" format="integer" />
+    <attr name="style">
+        <enum name="orange" value="0" />
+        <enum name="orange_big" value="2" />
+        <enum name="white" value="1" />
+        <enum name="white_big" value="3" />
+    </attr>
+    <attr name="minLength" format="integer" />
+    <attr name="numberBackground" format="reference" />
+    <attr name="numberSpacing" format="dimension" />
+    <attr name="textStyle">
+        <enum name="bold" value="1" />
+        <enum name="italic" value="2" />
+        <enum name="normal" value="0" />
+    </attr>
+    <attr name="drawableTop" format="reference" />
+    <attr name="drawableBottom" format="reference" />
+    <attr name="drawableLeft" format="reference" />
+    <attr name="drawableRight" format="reference" />
+    <attr name="zoomscale" format="float" />
+</resources>

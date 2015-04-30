@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true" android:drawable="@drawable/ko_exercise_mode_setting_item_bg_selected" />
+    <item android:state_focused="false" android:drawable="@drawable/ko_exercise_mode_setting_item_bg_default" />
+</selector>

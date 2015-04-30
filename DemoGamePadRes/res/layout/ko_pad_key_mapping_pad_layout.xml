@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:padding="0.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="top|left|center" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/ko_mapping_pad_bg" android:scaleType="fitCenter" />
+    <LinearLayout android:gravity="center" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:background="@drawable/ko_ico_set_gamehold_l2_normal" android:layout_width="@dimen/pad_key_mapping_game_pad_l2_width_95px" android:layout_height="@dimen/pad_key_mapping_game_pad_l2_height_55px" />
+        <View android:layout_width="@dimen/pad_key_mapping_game_pad_l2_r2_placeholder_width_420px" android:layout_height="@dimen/pad_key_mapping_place_holder_3px" />
+        <TextView android:background="@drawable/ko_ico_set_gamehold_r2_normal" android:layout_width="@dimen/pad_key_mapping_game_pad_l2_width_95px" android:layout_height="@dimen/pad_key_mapping_game_pad_l2_height_55px" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/pad_key_mapping_game_pad_l1_r1_margin_top_5dp">
+        <TextView android:background="@drawable/ko_ico_set_gamehold_l1_normal" android:layout_width="@dimen/pad_key_mapping_game_pad_l1_width_206px" android:layout_height="@dimen/pad_key_mapping_game_pad_l1_height_74px" />
+        <View android:layout_width="@dimen/pad_key_mapping_game_pad_l1_r1_placeholder_width_227px" android:layout_height="@dimen/pad_key_mapping_place_holder_3px" />
+        <TextView android:background="@drawable/ko_ico_set_gamehold_r1_normal" android:layout_width="@dimen/pad_key_mapping_game_pad_l1_width_206px" android:layout_height="@dimen/pad_key_mapping_game_pad_l1_height_74px" />
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/pad_key_mapping_game_pad_menu_margin_top_128px">
+        <TextView android:background="@drawable/ko_ico_set_gamehold_menu_normal" android:layout_width="@dimen/pad_key_mapping_game_pad_menu_width_67px" android:layout_height="@dimen/pad_key_mapping_game_pad_menu_height_32px" />
+        <TextView android:layout_width="@dimen/pad_key_mapping_game_pad_menu_placeholdem_18px" android:layout_height="@dimen/pad_key_mapping_place_holder_3px" />
+        <TextView android:background="@drawable/ko_ico_set_gamehold_menu_normal" android:layout_width="@dimen/pad_key_mapping_game_pad_menu_width_67px" android:layout_height="@dimen/pad_key_mapping_game_pad_menu_height_32px" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <cn.vszone.gamepad.android.FlickerView android:id="@id/pad_key_mapping_btn_l2" android:layout_width="@dimen/pad_key_mapping_game_pad_l2_width_95px" android:layout_height="@dimen/pad_key_mapping_game_pad_l2_height_55px" />
+        <TextView android:layout_width="@dimen/pad_key_mapping_game_pad_l2_r2_placeholder_width_420px" android:layout_height="@dimen/pad_key_mapping_place_holder_3px" />
+        <cn.vszone.gamepad.android.FlickerView android:id="@id/pad_key_mapping_btn_r2" android:layout_width="@dimen/pad_key_mapping_game_pad_l2_width_95px" android:layout_height="@dimen/pad_key_mapping_game_pad_l2_height_55px" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/pad_key_mapping_game_pad_l1_r1_margin_top_5dp">
+        <cn.vszone.gamepad.android.FlickerView android:id="@id/pad_key_mapping_btn_l1" android:layout_width="@dimen/pad_key_mapping_game_pad_l1_width_206px" android:layout_height="@dimen/pad_key_mapping_game_pad_l1_height_74px" />
+        <TextView android:layout_width="@dimen/pad_key_mapping_game_pad_l1_r1_placeholder_width_227px" android:layout_height="@dimen/pad_key_mapping_place_holder_3px" />
+        <cn.vszone.gamepad.android.FlickerView android:id="@id/pad_key_mapping_btn_r1" android:layout_width="@dimen/pad_key_mapping_game_pad_l1_width_206px" android:layout_height="@dimen/pad_key_mapping_game_pad_l1_height_74px" />
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/pad_key_mapping_game_pad_menu_margin_top_128px">
+        <cn.vszone.gamepad.android.FlickerView android:id="@id/pad_key_mapping_btn_select" android:layout_width="@dimen/pad_key_mapping_game_pad_menu_width_67px" android:layout_height="@dimen/pad_key_mapping_game_pad_menu_height_32px" />
+        <TextView android:layout_width="@dimen/pad_key_mapping_game_pad_menu_placeholdem_18px" android:layout_height="@dimen/pad_key_mapping_place_holder_3px" />
+        <cn.vszone.gamepad.android.FlickerView android:id="@id/pad_key_mapping_btn_start" android:layout_width="@dimen/pad_key_mapping_game_pad_menu_width_67px" android:layout_height="@dimen/pad_key_mapping_game_pad_menu_height_32px" />
+    </LinearLayout>
+    <include android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/pad_key_mapping_game_pad_wave_buttons_margin_left_556px" android:layout_marginTop="@dimen/pad_key_mapping_game_pad_wave_buttons_margin_top_64px" layout="@layout/ko_pad_key_mapping_wave_button" />
+    <TextView android:textSize="@dimen/font_size42px" android:textColor="@color/ko_dialog_content_white" android:ellipsize="marquee" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/pad_key_mapping_tv_pad_name" android:layout_width="@dimen/pad_key_mapping_ganm_pad_name_width_420px" android:layout_height="wrap_content" android:layout_marginTop="@dimen/pad_key_mapping_ganm_pad_name_margin_top_548px" android:text="手柄名称" android:scrollHorizontally="true" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" style="@style/WhiteTextStyle" />
+</FrameLayout>

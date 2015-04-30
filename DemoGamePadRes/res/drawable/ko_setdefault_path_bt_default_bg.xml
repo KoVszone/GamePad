@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#11ffffff" />
+    <corners android:radius="@dimen/radius8px" />
+    <stroke android:width="@dimen/storage_space_item_setdefaul_bg_stroke_width_1px" android:color="#88ffffff" />
+</shape>

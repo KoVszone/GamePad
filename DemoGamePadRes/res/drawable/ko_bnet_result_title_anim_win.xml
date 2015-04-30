@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="500" android:drawable="@drawable/ko_vs_pic_result_title_top_win_1" />
+    <item android:duration="500" android:drawable="@drawable/ko_vs_pic_result_title_top_win_2" />
+</animation-list>

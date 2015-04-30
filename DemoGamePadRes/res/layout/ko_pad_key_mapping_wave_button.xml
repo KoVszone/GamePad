@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <cn.vszone.gamepad.android.WavesView android:id="@id/pad_key_mapping_btn_x_bg" android:layout_width="@dimen/pad_key_mapping_game_pad_wave_button_size_132px" android:layout_height="@dimen/pad_key_mapping_game_pad_wave_button_size_132px" android:layout_marginLeft="0.0px" android:layout_marginTop="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" />
+    <cn.vszone.gamepad.android.WavesView android:id="@id/pad_key_mapping_btn_y_bg" android:layout_width="@dimen/pad_key_mapping_game_pad_wave_button_size_132px" android:layout_height="@dimen/pad_key_mapping_game_pad_wave_button_size_132px" android:layout_marginLeft="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" android:layout_marginTop="0.0px" />
+    <cn.vszone.gamepad.android.WavesView android:id="@id/pad_key_mapping_btn_b_bg" android:layout_width="@dimen/pad_key_mapping_game_pad_wave_button_size_132px" android:layout_height="@dimen/pad_key_mapping_game_pad_wave_button_size_132px" android:layout_marginLeft="@dimen/pad_key_mapping_game_pad_wave_button_size_132px" android:layout_marginTop="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" />
+    <cn.vszone.gamepad.android.WavesView android:id="@id/pad_key_mapping_btn_a_bg" android:layout_width="@dimen/pad_key_mapping_game_pad_wave_button_size_132px" android:layout_height="@dimen/pad_key_mapping_game_pad_wave_button_size_132px" android:layout_marginLeft="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" android:layout_marginTop="@dimen/pad_key_mapping_game_pad_wave_button_size_132px" />
+    <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:layout_gravity="center" android:background="@drawable/ko_ico_set_gamehold_circle_normal" android:layout_width="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" android:layout_height="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" />
+        <TextView android:layout_width="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" android:layout_height="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" />
+        <TextView android:layout_gravity="center" android:background="@drawable/ko_ico_set_gamehold_circle_normal" android:layout_width="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" android:layout_height="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" />
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:layout_gravity="center" android:background="@drawable/ko_ico_set_gamehold_circle_normal" android:layout_width="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" android:layout_height="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" />
+        <TextView android:layout_width="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" android:layout_height="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" />
+        <TextView android:layout_gravity="center" android:background="@drawable/ko_ico_set_gamehold_circle_normal" android:layout_width="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" android:layout_height="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" />
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <cn.vszone.gamepad.android.FlickerView android:layout_gravity="center" android:id="@id/pad_key_mapping_btn_x" android:layout_width="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" android:layout_height="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" />
+        <TextView android:layout_width="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" android:layout_height="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" />
+        <cn.vszone.gamepad.android.FlickerView android:layout_gravity="center" android:id="@id/pad_key_mapping_btn_b" android:layout_width="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" android:layout_height="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" />
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <cn.vszone.gamepad.android.FlickerView android:layout_gravity="center" android:id="@id/pad_key_mapping_btn_y" android:layout_width="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" android:layout_height="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" />
+        <TextView android:layout_width="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" android:layout_height="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" />
+        <cn.vszone.gamepad.android.FlickerView android:layout_gravity="center" android:id="@id/pad_key_mapping_btn_a" android:layout_width="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" android:layout_height="@dimen/pad_key_mapping_game_pad_circle_btn_size_66px" />
+    </LinearLayout>
+</FrameLayout>

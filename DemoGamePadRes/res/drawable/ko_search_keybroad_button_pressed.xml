@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/search_keybroad_button_bg_radius_20px" />
+            <stroke android:width="@dimen/stroke_width3px" android:color="@color/ko_search_game_text_blue" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/search_keybroad_button_bg_radius_20px" />
+            <solid android:color="@color/ko_search_game_button_bg_blue_alpha_20" />
+        </shape>
+    </item>
+</layer-list>

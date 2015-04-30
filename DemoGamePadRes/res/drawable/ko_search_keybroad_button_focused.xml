@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="rectangle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="@dimen/search_keybroad_button_bg_radius_20px" />
+    <solid android:color="#ff2e98e5" />
+</shape>

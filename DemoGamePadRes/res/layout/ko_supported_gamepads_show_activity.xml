@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/font_size58px" android:textStyle="bold" android:textColor="@color/ko_white" android:id="@id/supported_gamepads_tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/file_browser_title_margin_top_56px" android:text="@string/ko_supported_gamepads_title" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+    <cn.vszone.gamepad.android.FocusedGridView android:id="@id/supported_gamepads_gv_files" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:horizontalSpacing="@dimen/file_browser_gv_files_horizontalSpacing_f81px" android:verticalSpacing="@dimen/file_browser_gv_files_verticalSpacing_f42px" android:stretchMode="columnWidth" android:numColumns="auto_fit" android:layout_below="@id/supported_gamepads_tv_title" />
+    <ImageView android:id="@id/operation_iv_tips" android:layout_width="@dimen/operation_tips_width_358px" android:layout_height="@dimen/operation_tips_height_58px" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" android:contentDescription="@string/ko_app_name" />
+</RelativeLayout>

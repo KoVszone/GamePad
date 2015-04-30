@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:visible="true" android:shape="rectangle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:topLeftRadius="0.0dip" android:topRightRadius="@dimen/radius10px" android:bottomLeftRadius="0.0dip" android:bottomRightRadius="@dimen/radius10px" />
+    <solid android:color="@color/ko_dialog_title_grey" />
+</shape>

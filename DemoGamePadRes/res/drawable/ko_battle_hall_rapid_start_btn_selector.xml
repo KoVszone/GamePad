@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true" android:drawable="@drawable/ko_battle_hall_rapid_start_btn_focused" />
+    <item android:state_selected="true" android:drawable="@drawable/ko_battle_hall_rapid_start_btn_focused" />
+    <item android:state_selected="false" android:drawable="@drawable/ko_battle_hall_rapid_start_btn_unfocus" />
+</selector>

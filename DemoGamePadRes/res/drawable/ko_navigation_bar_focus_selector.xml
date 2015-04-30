@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true" android:drawable="@drawable/ko_nav_focus_down" />
+    <item android:state_selected="false" android:drawable="@drawable/ko_nav_focus_up" />
+    <item android:drawable="@drawable/ko_nav_focus_up" />
+</selector>
