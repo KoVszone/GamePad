@@ -3,13 +3,17 @@
 ####版本  
 
 >VSzone1.1
+
+-----
 ####Change Log  
 v1.1
-1. 增加 针对未适配的手柄 提供映射界面.
+1.  增加 针对未适配的手柄 提供映射界面.
 2. 增加 当前支持的手柄列表展示界面
 3. 增加 当前已经插入到设备上的列表界面
 4. 上述界面UI资源均以Android Libarry+jar的形式提供,与libgamepad.jar独立,故可单独使用.
-5. 提升兼容性(android4.0-5.1)
+5.  提升兼容性(android4.0-5.1)
+
+--------
 
 #### 功能
 针对目前手柄没有统一标准,导致各个手柄在使用的过程中出现各种问题，游戏开发者在对手柄的兼容性适配将会成为一个头大的问题，在这种状况下，手柄SDK出现了。
@@ -239,21 +243,29 @@ OnPlayerListener mOnPlayerListener = new OnPlayerListener(){
 JAVA开发文档见 /doc
 
 ### 兼容性
-android 4.1-5.0
+android 4.0-5.1
 yun OS 外设SDK2.7及以上 
 
-###适配范围
+###适配标准说明
 提供了游戏中常用按键的适配,如下图中红色标注的按钮等非常见按键不在适配范围
 ![Alt text](./手柄SDK提示_2.png)
 
+###兼容范围之外的手柄如何适配
+提供了DemoGamePadRes的android library和libgamepadwithui.jar.
+集成UI库后APP就有了通过APP用户手动映射的能力.
+适配界面截图如下:
+![Alt text](./mapping.png)
+![Alt text](./mapping1.png)
+
+
 
 ###常见问题QA
-Q1:异常 java.lang.VerifyError. **cn.vszone.gamepad
->解决方法 :按照步骤3 导入gson-2.3.jar,protobuf2.5.0.jar依赖文件
+1. Q1:异常 java.lang.VerifyError. **cn.vszone.gamepad
+解决方法 :按照步骤3 导入gson-2.3.jar,protobuf2.5.0.jar依赖文件
 
-Q2:手柄使用异常,且有如下LOG 
->VSzone "WARN:the xxx is  invalid"
->解决方法:见SDK接入步骤1,使用正确的接入KEY
+2. Q2:手柄使用异常,且有如下LOG 
+VSzone "WARN:the xxx is  invalid"
+解决方法:见SDK接入步骤1,使用正确的接入KEY
 
 -----
 ### http://www.vszone.cn/
