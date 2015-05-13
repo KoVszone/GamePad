@@ -1,4 +1,4 @@
-﻿# GamePadSDK
+# GamePadSDK
 
 ####版本  
 
@@ -47,6 +47,27 @@ GamePad SDK提供在android和yunOS操作系统上对游戏手柄的适配，功
 ###标准按键
 如下所示,在SDK的作用下 开发者只需关心业务及与如下标准按键交互逻辑即可.
 ![Alt text](./gamepad.png)
+
+#### 按键说明
+
+|序号|keycod|说明|
+|--------|-----|----|
+| 1   | DPAD_UP, DPAD_DOWN, DPAD_LEFT, DPAD_RIGHT | 上下左右方向键|
+| 2   | lx,ly,BUTTON_THUMBL| 左摇杆坐标, 范围[-1.0,1.0],左Thumb |
+| 3   | rx,ry,BUTTON_THUMBR| 右摇杆坐标, 范围[-1.0,1.0],右Thumb |
+| 4   | BUTTON_X | X键  |
+| 5   | BUTTON_A | A键,在菜单导航中用于确定(EVENT_MODE_SYSTEM) |
+| 6   | BUTTON_Y | Y键  |
+| 7   | BUTTON_B | B键,在菜单导航中用于返回或者取消(EVENT_MODE_SYSTEM)  |
+| 8   | BUTTON_R1 | R1键  |
+| 9   | BUTTON_THUMBR |右扳机,油门  |
+| 10   | BUTTON_THUMBL| 左扳机,刹车 |
+| 11   | BUTTON_L1| L1键  |
+| 12   | BUTTON_SELECT| 投币,菜单(EVENT_MODE_SYSTEM)|
+| 13   | BUTTON_START| 游戏开始/暂停  |
+
+(EVENT_MODE_SYSTEM)表示在应用模式下
+
 ---
 
 ###适配标准说明
@@ -195,6 +216,28 @@ OnPlayerListener mOnPlayerListener = new OnPlayerListener(){
         }
         
     };
+	//或者使用SDK的包装类来包装OnPlayerListener的实现以直接获取左右摇杆坐标
+	 mOnPlayerListenerImp = new OnPlayerListenerWrapper(new OnPlayerListenerImp()) {
+    /**
+     * 
+     * @param playerID 多控制设备索引 相当与游戏中的玩家 P1 P2 P3 P4...
+     * @param xLeftJoystick 左摇杆X坐标值 返回[-1.0,1.0]
+     * @param yLeftJoystick 左摇杆Y坐标值 返回[-1.0,1.0]
+     * @param xRightJoystick 右摇杆X坐标值 返回[-1.0,1.0]
+     * @param yRightJoystick 右摇杆Y坐标值 返回[-1.0,1.0] 
+     * @return
+     */
+    protected abstract boolean onPlayerMotionEvent(int playerID, float xLeftJoystick, float yLeftJoystick, float xRightJoystick, float yRightJoystick);{
+                
+                return true;
+            }
+
+            @Override
+            protected boolean onPlayerKeyEvent(int playerID, KeyEvent ev) {
+                
+                return true;
+            }
+        };
 ```
 4.2:注册以接收手柄的按键事件和模式切换
 **GamePadManager.EVENT_MODE_GAME** 表示切换为游戏模式 
