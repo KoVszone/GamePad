@@ -2,10 +2,22 @@
 
 ####版本  
 
->VSzone1.1
+>VSzone1.2
 
 -----
 ####Change Log  
+
+VSzone1.2
+
+
+1:提高对手柄sdk 对手柄多模式的支持(XBOX/ps/pc模式).
+
+2:扩大手柄按键兼容标准的范围,由8键增加到12键(A,B,X,Y,SELECT,START,L1,R1,L2,R2,THUMBL(左摇杆按键),THUMBR(右摇杆按键)).
+
+3:更新键值采集的机制.允许用户自主上传键值映射,提升键值的兼容广度.
+
+4:增加一个API OnPlayerListenerWrapper,直接输出左右摇杆的XY值
+
 VSzone1.1
 
 
@@ -38,9 +50,11 @@ GamePad SDK提供在android和yunOS操作系统上对游戏手柄的适配，功
 ---
 
 ###适配标准说明
-提供了游戏中常用按键的适配,如下图中红色标注的按钮等非常见按键不在适配范围
+sdk解决的问题：兼容手柄的不同模式，不管玩家将手柄切换到什么模式，标准12键的键值通过sdk转换，都变成一致的输出。其他非标准键，保持原样输出。
 
-![Alt text](./out_gamepad.png)
+暂时无法解决的问题：android系统本身不支持的手柄(手柄无ps模式，或者手柄处于不被支持的模式）。  
+需要注意：有些设备同时兼容XBOX和PS，有些设备只兼容PS。
+
 
 ###兼容范围之外的手柄如何适配
 提供了DemoGamePadRes的android library和libgamepadwithui.jar.
@@ -259,7 +273,7 @@ OnPlayerListener mOnPlayerListener = new OnPlayerListener(){
 ### 关于混淆
 在proguard配置文件中添加如下
 -libraryjars libgamepad.jar
-
+更多配置见DemoProgject/proguard-project.txt
 
 
 ### Java Doc
@@ -281,6 +295,14 @@ yun OS 外设SDK2.7及以上
 2. Q2:手柄使用异常,且有如下LOG 
 VSzone "WARN:the xxx is  invalid"
 解决方法:见SDK接入步骤1,使用正确的接入KEY
+
+2. Q2:手柄使用异常,且有如下LOG 
+key is too short
+解决方法:见SDK接入步骤1,使用正确的接入KEY
+
+2. Q2:手柄使用异常,且有如下LOG 
+lock==null
+解决方法:见本文 关于混淆 
 
 -----
 ### http://www.vszone.cn/
