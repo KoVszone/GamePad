@@ -1,4 +1,4 @@
-# GamePadSDK
+﻿# GamePadSDK
 
 ####版本  
 
@@ -10,13 +10,13 @@
 VSzone1.2
 
 
-1:提高对手柄sdk 对手柄多模式的支持(XBOX/ps/pc模式).
+1. 提高对手柄sdk 对手柄多模式的支持(XBOX/ps/pc模式).
 
-2:扩大手柄按键兼容标准的范围,由8键增加到12键(A,B,X,Y,SELECT,START,L1,R1,L2,R2,THUMBL(左摇杆按键),THUMBR(右摇杆按键)).
+2. 扩大手柄按键兼容标准的范围,由8键增加到12键(A,B,X,Y,SELECT,START,L1,R1,L2,R2,THUMBL(左摇杆按键),THUMBR(右摇杆按键)).
 
-3:更新键值采集的机制.允许用户自主上传键值映射,提升键值的兼容广度.
+3. 更新键值采集的机制.允许用户自主上传键值映射,提升键值的兼容广度.
 
-4:增加一个API OnPlayerListenerWrapper,直接输出左右摇杆的XY值
+4. 增加一个API OnPlayerListenerWrapper,直接输出左右摇杆的XY值
 
 VSzone1.1
 
@@ -34,19 +34,19 @@ VSzone1.1
 --------
 
 #### 功能
-针对目前手柄没有统一标准,导致各个手柄在使用的过程中出现各种问题，游戏开发者在对手柄的兼容性适配将会成为一个头大的问题，在这种状况下，手柄SDK出现了。
 
 GamePad SDK提供在android和yunOS操作系统上对游戏手柄的适配，功能如下
 
-1：对于APP应用情景 使用手柄的A，B键模拟确认,返回的操作,控制应用的操作.
+1. 应用情景:使用手柄的A，B键模拟确认,返回的操作,无需修改代码,手柄与应用即可完美交互.
 
-2：对于游戏情景 提供**上下左右方向键,左摇杆,A，B，X，Y，start， slect， L1， R1**等八键的适配
+2. 游戏情景: 提供**上下左右方向键,左右摇杆,A，B，X，Y，start， select， L1， R1,L2,R2,THUMBL,THUMBR**等12键的适配,无论何种手柄,何种模式均按标准输出键值
 
-3：兼容市面上诸多手柄,并对新上市手柄提供在线的,持续的,及时的兼容性更新.
+3. 兼容市面上诸多手柄,并对新上市手柄提供在线的,持续的,及时的兼容性更新.
 
 ###标准按键
 如下所示,在SDK的作用下 开发者只需关心业务及与如下标准按键交互逻辑即可.
-![Alt text](./gamepad.png)
+![Alt text](./gamepadsample.png)
+
 
 #### 按键说明
 
@@ -113,7 +113,7 @@ DEMO中因为签名关系会出现手柄未适配从而使用不正常的现象,
       .
    </application>
 ``` 
-其中 **%s** 为应用标示，该值由第三方开发者工程的包名和签名MD5指纹计算，具体获取和计算方法请发送电子邮件[tv_service@vszone.cn](tv_service@vszone.cn),邮件标题需要以[sdk]开头.
+其中 **%s** 为应用标示，该值由第三方开发者工程的包名和签名MD5指纹计算，具体获取和计算方法请发送电子邮件[service@kobox.tv ](service@kobox.tv ),邮件标题需要以[sdk]开头.
 
 2：**初始化:**在AndroidManifest.xml中android:name标签指定的类中初始化SDK
 意图是在应用启动时就初始化SDK。
@@ -160,7 +160,7 @@ class BaseActivity extends Activity{
     public boolean dispatchKeyEvent(KeyEvent event) {
         event = GamePadManager.getInstance(this).dispatchKeyEvent(event);
         // must return true;
-        if (event.getKeyCode() == KeyEvent.KEYCODE_UNKNOWN) { return true; }
+        if (!InputDeviceUtils.isValueKeyEvent(event)) { return true; }
         return super.dispatchKeyEvent(event);
     }
 ```
@@ -220,7 +220,7 @@ OnPlayerListener mOnPlayerListener = new OnPlayerListener(){
 	 mOnPlayerListenerImp = new OnPlayerListenerWrapper(new OnPlayerListenerImp()) {
     /**
      * 
-     * @param playerID 多控制设备索引 相当与游戏中的玩家 P1 P2 P3 P4...
+     * @param playerID 多控制设备索引 对应于游戏中的玩家索引 P1 P2 P3 P4...
      * @param xLeftJoystick 左摇杆X坐标值 返回[-1.0,1.0]
      * @param yLeftJoystick 左摇杆Y坐标值 返回[-1.0,1.0]
      * @param xRightJoystick 右摇杆X坐标值 返回[-1.0,1.0]
@@ -259,7 +259,7 @@ OnPlayerListener mOnPlayerListener = new OnPlayerListener(){
       GamePadManager.getInstance(this).unregistOnPlayerListener(mOnPlayerListener);
     }
 ```
-拓展 让手柄控制应用
+拓展 切换到应用模式 用户使用手柄与应用UI交互
 ```
     @Override
     protected void onResume() {
