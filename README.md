@@ -1,13 +1,13 @@
-﻿## iConsoles手柄中间件SDK
+﻿## iConsoles手柄中间件SDK接入指引
+[toc]
 
-####版本  
+当前版本号 
 
 iConsoles1.3
 
 -----
 
-#### 功能
-
+#### SDK能做什么
 SDK提供在android和yunOS操作系统上对游戏手柄,键盘的适配，功能如下
 
 1. App情景:使用手柄的A，B键模拟确认,返回的操作,手机版App轻松完美移植到TV.
@@ -20,12 +20,17 @@ SDK提供在android和yunOS操作系统上对游戏手柄,键盘的适配，功�
 
 5.  兼容标准外置键盘.app/游戏的用户没有手柄就换键盘吧.反正游戏不能错过.
 
-###标准按键
-如下所示,在SDK的作用下 开发者只需关心业务及与如下标准按键交互逻辑即可.
+###什么是标准按键
+
+
+说明
+目前市面上的游戏手柄通常包含多种模式 pc/xbox/ps/android.手柄品牌和模式切换会导致键值输出不一致.同一个手柄在不同的设备和操作系统上输出不一致.
+SDK不管手柄切换到什么模式，在什么设备上.保证标准12键的键值输出的一致性.其他非标准键，保持原始输出.
+注意：有些设备系统本身无法识别某些手柄的特定模式,sdk也不能兼容(有些设备同时兼容XBOX和PS模式的手柄，有些设备只兼容PS).
+
+如下所示,任何手柄都是以下图标准键值.开发者只需关心业务及与如下标准按键交互逻辑即可.
 ![Alt text](./gamepadsample.png)
 
-
-#### 按键说明
 
 |序号|keycode|说明|
 |--------|-----|----|
@@ -67,11 +72,6 @@ SDK提供在android和yunOS操作系统上对游戏手柄,键盘的适配，功�
 
 ---
 
-###适配标准说明
-目前市面上的游戏手柄通常包含多种模式 pc/xbox/ps/android.模式切换会导致键值输出不一致.
-不管手柄切换到什么模式，sdk保证标准12键的键值输出的一致性.其他非标准键，保持原始输出.
-
-注意：有些设备系统本身无法识别某些手柄的特定模式,sdk也不能兼容(有些设备同时兼容XBOX和PS模式的手柄，有些设备只兼容PS).
 
 
 ###兼容范围之外的手柄如何适配
@@ -94,8 +94,9 @@ git clone https://github.com/KoVszone/GamePad
 ```
 
 
-#### SDK接入步骤：
-1：**权限和KEY:**在AndroidManifest.xml 添加如下代码段：
+### SDK接入步骤：
+#### 1:**权限和KEY:**
+在AndroidManifest.xml 添加如下代码段：
 ``` xml
     <!-- 手柄兼容文件在线更新 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -113,8 +114,19 @@ git clone https://github.com/KoVszone/GamePad
 其中 **%s** 为应用标示，该值由第三方开发者工程的包名和签名MD5指纹计算，具体获取和计算方法请发送电子邮件[service@kobox.tv ](service@kobox.tv ),邮件标题需要以[sdk]开头.
 
 DEMO中因为签名关系会出现手柄未适配从而使用不正常的现象,申请接入KEY并配置即可解决.
+####2: **依赖** 
+在android工程的构建路径中加入SDK的依赖jar包
 
-2：**初始化:**在AndroidManifest.xml中android:name标签指定的类中初始化SDK
+**libgamepad.jar**//SDK
+**libGameHelper.so** //SDK
+**gson-2.3.jar**//JSON
+**protobuf2.5.0.jar**//google通信协议
+ 
+以eclipse工程为例 在../libs下
+![Alt text](./1426497118002.png)
+
+####3:**初始化**
+在AndroidManifest.xml中android:name标签指定的类中初始化SDK
 意图是在应用启动时就初始化SDK。
 代码示例如下：
 ``` xml
@@ -164,25 +176,15 @@ class BaseActivity extends Activity{
     }
 ```
 
-3: **依赖** 在android工程的构建路径中加入SDK的依赖jar包
 
-**libgamepad.jar**//SDK
-**libGameHelper.so** //SDK
-**gson-2.3.jar**//JSON
-**protobuf2.5.0.jar**//google通信协议
- 
-以eclipse工程为例 在../libs下
-![Alt text](./1426497118002.png)
 
 
 
 **完成以上1,2,3点后,APP或者游戏就有了支持手柄的能力**
 
-4:**接口拓展**
+####4:**接口拓展**
 
->拓展 让手柄控制游戏和应用
-
-
+拓展 让手柄控制游戏和应用
 4.1: 实现OnPlayerListener接口
 当SDK的模式为游戏模式时.回调该接口.(接口不可做耗时操作,否则会造成按键事件丢失)
 如何切换SDK的模式见下文
@@ -275,13 +277,14 @@ OnPlayerListener mOnPlayerListener = new OnPlayerListener(){
     }
 ```
 
-5:  注销SDK
+####5:  注销SDK
 
     public void exitApp() {
         GamePadManager.getInstance(this).switchContext(null);
         GamePadManager.getInstance(this).destory();
     }
-6:**虚拟手柄支持**,支持"KO电视游戏助手"虚拟手柄支持.仅局域网同子网段(**可选,不支持5.0及以上**)
+####6:**虚拟手柄支持**
+支持"KO电视游戏助手"虚拟手柄支持.仅局域网同子网段(**可选,不支持5.0及以上**)
 在AndroidManifest.xml中注册虚拟手柄服务
 ```xml
         <service
@@ -321,12 +324,12 @@ OnPlayerListener mOnPlayerListener = new OnPlayerListener(){
 ### Java Doc
 JAVA开发文档见 /doc
 
-### 兼容性
+兼容性
 android 4.0-5.1
 yun OS 外设SDK2.7及以上 
 
 
-###虚拟手柄下载地址
+虚拟手柄下载地址
 
 ![Alt text](./1426502039529.png)
 
@@ -378,5 +381,5 @@ lock==null
 
 
 -----
-### http://www.matchvs.com
-### Copyright © 2012 - 2015 matchvs. All Rights Reserved.
+>http://www.matchvs.com
+> Copyright © 2012 - 2015 matchvs. All Rights Reserved.
