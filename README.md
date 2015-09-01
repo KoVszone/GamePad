@@ -1,47 +1,24 @@
-﻿# GamePadSDK
+﻿## iConsoles手柄中间件SDK
 
 ####版本  
 
->VSzone1.2
+iConsoles1.3
 
 -----
-####Change Log  
-
-VSzone1.2
-
-
-1. 提高对手柄sdk 对手柄多模式的支持(XBOX/ps/pc模式).
-
-2. 扩大手柄按键兼容标准的范围,由8键增加到12键(A,B,X,Y,SELECT,START,L1,R1,L2,R2,THUMBL(左摇杆按键),THUMBR(右摇杆按键)).
-
-3. 更新键值采集的机制.允许用户自主上传键值映射,提升键值的兼容广度.
-
-4. 增加一个API OnPlayerListenerWrapper,直接输出左右摇杆的XY值
-
-VSzone1.1
-
-
-1. 增加 针对未适配的手柄 提供映射界面.
-
-2. 增加 当前支持的手柄列表展示界面
-
-3. 增加 当前已经插入到设备上的列表界面
-
-4. 上述界面UI资源均以Android Libarry+jar的形式提供,与libgamepad.jar独立,故可单独使用.
-
-5. 提升兼容性(android4.0-5.1)
-
---------
 
 #### 功能
 
-GamePad SDK提供在android和yunOS操作系统上对游戏手柄的适配，功能如下
+SDK提供在android和yunOS操作系统上对游戏手柄,键盘的适配，功能如下
 
-1. 应用情景:使用手柄的A，B键模拟确认,返回的操作,无需修改代码,手柄与应用即可完美交互.
+1. App情景:使用手柄的A，B键模拟确认,返回的操作,手机版App轻松完美移植到TV.
 
-2. 游戏情景: 提供**上下左右方向键,左右摇杆,A，B，X，Y，start， select， L1， R1,L2,R2,THUMBL,THUMBR**等12键的适配,无论何种手柄,何种模式均按标准输出键值
+2. 游戏情景: 提供**上下左右方向键,左右摇杆,A，B，X，Y，start， select， L1， R1,L2,R2,THUMBL,THUMBR**等12键的标准输出,无论何种手柄,何种模式均按此标准输出键值.游戏开发只需专注与融合用手柄提高游戏的操作体验.
 
 3. 兼容市面上诸多手柄,并对新上市手柄提供在线的,持续的,及时的兼容性更新.
+
+4.  低侵入式集成:无需驱动,无需ROOT.
+
+5.  兼容标准外置键盘.app/游戏的用户没有手柄就换键盘吧.反正游戏不能错过.
 
 ###标准按键
 如下所示,在SDK的作用下 开发者只需关心业务及与如下标准按键交互逻辑即可.
@@ -50,7 +27,7 @@ GamePad SDK提供在android和yunOS操作系统上对游戏手柄的适配，功
 
 #### 按键说明
 
-|序号|keycod|说明|
+|序号|keycode|说明|
 |--------|-----|----|
 | 1   | DPAD_UP, DPAD_DOWN, DPAD_LEFT, DPAD_RIGHT | 上下左右方向键|
 | 2   | lx,ly,BUTTON_THUMBL| 左摇杆坐标, 范围[-1.0,1.0],左Thumb |
@@ -68,13 +45,33 @@ GamePad SDK提供在android和yunOS操作系统上对游戏手柄的适配，功
 
 (EVENT_MODE_SYSTEM)表示在应用模式下
 
+----
+键盘按键说明(仅在EVENT_MODE_GAME生效).
+|键盘键值|keycode|
+|--------|-----|
+|a|DPAD_UP |
+|s|DPAD_DOWN|
+|d|DPAD_LEFT|
+|f|DPAD_RIGHT |
+|j|BUTTON_X|
+|k|BUTTON_A|
+|u|BUTTON_Y|
+|i|BUTTON_B|
+|q|BUTTON_L1|
+|e|BUTTON_R1|
+|n|BUTTON_L2|
+|m|BUTTON_R2|
+|f|BUTTON_THUMBR |
+|h|BUTTON_THUMBL|
+
+
 ---
 
 ###适配标准说明
-sdk解决的问题：兼容手柄的不同模式，不管玩家将手柄切换到什么模式，标准12键的键值通过sdk转换，都变成一致的输出。其他非标准键，保持原样输出。
+目前市面上的游戏手柄通常包含多种模式 pc/xbox/ps/android.模式切换会导致键值输出不一致.
+不管手柄切换到什么模式，sdk保证标准12键的键值输出的一致性.其他非标准键，保持原始输出.
 
-暂时无法解决的问题：android系统本身不支持的手柄(手柄无ps模式，或者手柄处于不被支持的模式）。  
-需要注意：有些设备同时兼容XBOX和PS，有些设备只兼容PS。
+注意：有些设备系统本身无法识别某些手柄的特定模式,sdk也不能兼容(有些设备同时兼容XBOX和PS模式的手柄，有些设备只兼容PS).
 
 
 ###兼容范围之外的手柄如何适配
@@ -331,6 +328,28 @@ yun OS 外设SDK2.7及以上
 
 ![Alt text](./1426502039529.png)
 
+####Change Log  
+iConsoles1.3
+1:增加对标准外置键盘的支持.
+2:提高手柄在不同设备上适配的精度.
+
+iConsoles1.2
+
+1. 提高对手柄sdk 对手柄多模式的支持(XBOX/ps/pc模式).
+2. 扩大手柄按键兼容标准的范围,由8键增加到12键(A,B,X,Y,SELECT,START,L1,R1,L2,R2,THUMBL(左摇杆按键),THUMBR(右摇杆按键)).
+3. 更新键值采集的机制.允许用户自主上传键值映射,提升键值的兼容广度.
+4. 增加一个API OnPlayerListenerWrapper,直接输出左右摇杆的XY值
+
+
+iConsoles1.1
+1. 增加 针对未适配的手柄 提供映射界面.
+2. 增加 当前支持的手柄列表展示界面
+3. 增加 当前已经插入到设备上的列表界面
+4. 上述界面UI资源均以Android Libarry+jar的形式提供,与libgamepad.jar独立,故可单独使用.
+5. 提升兼容性(android4.0-5.1)
+
+--------
+
 ###常见问题QA
 1. Q1:异常 java.lang.VerifyError. **cn.vszone.gamepad
 解决方法 :按照步骤3 导入gson-2.3.jar,protobuf2.5.0.jar依赖文件
@@ -346,7 +365,16 @@ key is too short
 2. Q2:手柄使用异常,且有如下LOG 
 lock==null
 解决方法:见本文 关于混淆 
+3. Q3:多个手柄存在的情况下怎么分辨 
+手柄按插入的先后顺序为每个手柄设置了一个递增的序号.
+假设当前存在序号为1(A手柄),2(B手柄)3(C手柄)三个手柄
+1:拔掉A,不拔掉BC,再插入A, ABC序号不变
+2:拔掉AB,不拔掉C,再插入B, 再插入A, ABC序号为(2,1,3)
+3:拔掉ABC,再插入B, 再插入C,再插入A, ABC序号为(3,1,2)
+
+该序号就是程序中的playerID
+
 
 -----
-### http://www.vszone.cn/
-### Copyright © 2012 - 2014 VSzone. All Rights Reserved.
+### http://www.matchvs.com
+### Copyright © 2012 - 2015 matchvs. All Rights Reserved.
