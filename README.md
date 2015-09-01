@@ -12,7 +12,7 @@ SDK提供在android和yunOS操作系统上对游戏手柄,键盘的适配，功�
 
 1. App情景:使用手柄的A，B键模拟确认,返回的操作,手机版App轻松完美移植到TV.
 
-2. 游戏情景: 提供**上下左右方向键,左右摇杆,A，B，X，Y，start， select， L1， R1,L2,R2,THUMBL,THUMBR**等12键的标准输出,无论何种手柄,何种模式均按此标准输出键值.游戏开发只需专注与融合用手柄提高游戏的操作体验.
+2. 游戏情景: 提供**上下左右方向键,左右摇杆,A，B，X，Y，start， select， L1， R1,L2,R2,THUMBL,THUMBR**等12键的标准输出,无论何种手柄,何种模式均按此标准输出键值.游戏开发只需专注与如何使用手柄提高游戏的操作体验.
 
 3. 兼容市面上诸多手柄,并对新上市手柄提供在线的,持续的,及时的兼容性更新.
 
@@ -85,14 +85,14 @@ SDK提供在android和yunOS操作系统上对游戏手柄,键盘的适配，功�
 ![Alt text](./mapping1.png)
 
 -----
-### 示例DEMO
+### 示例DEMO和依赖jar包
 如何开发一个支持手柄操作的 <2048>游戏
 项目地址 https://github.com/KoVszone/GamePad
 ``` git
 git clone https://github.com/KoVszone/GamePad
 
 ```
-DEMO中因为签名关系会出现手柄未适配从而使用不正常的现象,更换接入KEY即可解决.
+
 
 #### SDK接入步骤：
 1：**权限和KEY:**在AndroidManifest.xml 添加如下代码段：
@@ -111,6 +111,8 @@ DEMO中因为签名关系会出现手柄未适配从而使用不正常的现象,
    </application>
 ``` 
 其中 **%s** 为应用标示，该值由第三方开发者工程的包名和签名MD5指纹计算，具体获取和计算方法请发送电子邮件[service@kobox.tv ](service@kobox.tv ),邮件标题需要以[sdk]开头.
+
+DEMO中因为签名关系会出现手柄未适配从而使用不正常的现象,申请接入KEY并配置即可解决.
 
 2：**初始化:**在AndroidManifest.xml中android:name标签指定的类中初始化SDK
 意图是在应用启动时就初始化SDK。
@@ -181,7 +183,7 @@ class BaseActivity extends Activity{
 >拓展 让手柄控制游戏和应用
 
 
-4.1:实现OnPlayerListener接口
+4.1: 实现OnPlayerListener接口
 当SDK的模式为游戏模式时.回调该接口.(接口不可做耗时操作,否则会造成按键事件丢失)
 如何切换SDK的模式见下文
 ```
@@ -236,7 +238,7 @@ OnPlayerListener mOnPlayerListener = new OnPlayerListener(){
             }
         };
 ```
-4.2:注册以接收手柄的按键事件和模式切换
+4.2: 注册以接收手柄的按键事件和模式切换
 **GamePadManager.EVENT_MODE_GAME** 表示切换为游戏模式 
 **GamePadManager.EVENT_MODE_SYSTEM** 表示切换为应用模式,按手柄的AB键将会达到确认和返回的效果
 **registOnPlayerListener** APP只有在可见时才注册SDK的监听,以监听按键事件.
@@ -273,7 +275,7 @@ OnPlayerListener mOnPlayerListener = new OnPlayerListener(){
     }
 ```
 
-5: 注销SDK
+5:  注销SDK
 
     public void exitApp() {
         GamePadManager.getInstance(this).switchContext(null);
@@ -354,15 +356,15 @@ iConsoles1.1
 1. Q1:异常 java.lang.VerifyError. **cn.vszone.gamepad
 解决方法 :按照步骤3 导入gson-2.3.jar,protobuf2.5.0.jar依赖文件
 
-2. Q2:手柄使用异常,且有如下LOG 
+2. Q2:手柄使用异常,且有如下log 
 VSzone "WARN:the xxx is  invalid"
 解决方法:见SDK接入步骤1,使用正确的接入KEY
 
-2. Q2:手柄使用异常,且有如下LOG 
+2. Q2:手柄使用异常,且有如下log 
 key is too short
 解决方法:见SDK接入步骤1,使用正确的接入KEY
 
-2. Q2:手柄使用异常,且有如下LOG 
+2. Q2:手柄使用异常,且有如下log 
 lock==null
 解决方法:见本文 关于混淆 
 3. Q3:多个手柄存在的情况下怎么分辨 
